@@ -5,7 +5,7 @@
 </p>
 
 ## Introduction
-One-line-at-a-time was a hobby project inspired by the character Dwight K. Schrute of 'The Office'. His efficent useage of text to deliver his resume is now replicated in this project. Using Twilio messaging system users can subscribe to receive documents one line at a time to their phone.
+One-line-at-a-time was a hobby project inspired by the character Dwight K. Schrute of 'The Office'. His efficient usage of text to deliver his resume is now replicated in this project. Using Twilio messaging system users can subscribe to receive documents one line at a time to their phone.
 
 ---
 ## Getting Started
