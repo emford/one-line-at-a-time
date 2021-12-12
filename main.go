@@ -5,11 +5,6 @@ import (
 	"os"
 )
 
-// link to subscribe
-// make server
-// tests
-// cleanup docs
-// lint
 func main() {
 	if len(os.Args) != 2 {
 		log.Fatalf("not enough arguments, need number to send to")
@@ -17,7 +12,7 @@ func main() {
 	toNumber := os.Args[1]
 	err := GetMessaging(toNumber)
 	if err != nil {
-		log.Fatalf("failed getting message %w", err)
+		log.Fatalf("failed getting message %s", err)
 	}
 	message := "Task completed."
 	log.Println(message)

@@ -53,7 +53,7 @@ func GetMessaging(toNumber string) error {
 
 	content, err := GetFile()
 	if err != nil {
-		return fmt.Errorf("failed to read text from file: ", err)
+		return fmt.Errorf("failed to read text from file: %w", err)
 	}
 	for _, each_ln := range content {
 		params.SetBody(each_ln)
