@@ -34,6 +34,7 @@ export TWILIO_FROM_PHONE_NUMBER="<NUMBER-CREATED-FROM-ACCOUNT>"
 ---
 ## Future Work
 
+- [ ] Expand testing
 - [ ] Allow upload of any document
 - [ ] Build server
 - [ ] Subscribers
