@@ -38,6 +38,7 @@ func GetFile() ([]string, error) {
 
 // GetMessaging creates the messaging params and returns
 // error if any messaging steps fail.
+// NOTE: look into making this testable
 func GetMessaging(toNumber string) error {
 	from := os.Getenv("TWILIO_FROM_PHONE_NUMBER")
 
