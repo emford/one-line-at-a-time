@@ -11,7 +11,7 @@ import (
 	openapi "github.com/twilio/twilio-go/rest/api/v2010" // import alias
 )
 
-// Client: Create a new Twilio client
+// Client creates a new Twilio client.
 func Client() (*twilio.RestClient, error) {
 	client := twilio.NewRestClient()
 	client.SetRegion("us1")
@@ -19,7 +19,7 @@ func Client() (*twilio.RestClient, error) {
 	return client, nil
 }
 
-// GetFile: Open and read text file
+// GetFile opens and reads a text file.
 func GetFile() ([]string, error) {
 	file, err := os.Open("resume_text.txt")
 	if err != nil {
@@ -36,8 +36,8 @@ func GetFile() ([]string, error) {
 	return text, nil
 }
 
-// GetMessaging: Create messaging params and return
-// messages
+// GetMessaging creates the messaging params and returns
+// error if any messaging steps fail.
 func GetMessaging(toNumber string) error {
 	from := os.Getenv("TWILIO_FROM_PHONE_NUMBER")
 
@@ -57,7 +57,8 @@ func GetMessaging(toNumber string) error {
 	for _, each_ln := range content {
 		params.SetBody(each_ln)
 
-		duration := time.Duration(len(each_ln) * 3)
+		// simulate the time spent to write text
+		duration := time.Duration(len(each_ln) * 1)
 		time.Sleep(duration * time.Second)
 
 		resp, err := client.ApiV2010.CreateMessage(&params) // pointer reasons?
@@ -68,7 +69,7 @@ func GetMessaging(toNumber string) error {
 		if resp.Price != nil {
 			price = *resp.Price
 		}
-		log.Printf("sent message: cost of message = %s", price) // derefrencing?
+		log.Printf("sent message: cost of message = %s", price)
 	}
 	return nil
 }
