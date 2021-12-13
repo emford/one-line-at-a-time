@@ -45,7 +45,6 @@ func GetMessaging(toNumber string) error {
 	if err != nil {
 		return fmt.Errorf("failed setting up client: %w", err) // string formatting? log.Log?
 	}
-	_ = client
 
 	params := openapi.CreateMessageParams{}
 	params.SetTo(toNumber)
